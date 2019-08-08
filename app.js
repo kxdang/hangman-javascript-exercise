@@ -1,4 +1,8 @@
-const Game1 = new Hangman("cat", 2);
+// HTTP (Hypertext Tranfer Protcol)
+// Request - What do we want to do?
+// Response -  what was actually done
+
+const Game1 = new Hangman("car parts", 4);
 document.querySelector("#word").textContent = Game1.Puzzle;
 document.querySelector("#guesses-left").textContent = Game1.statusMessage;
 
