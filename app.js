@@ -9,14 +9,19 @@ window.addEventListener("keypress", e => {
   document.querySelector("#guesses-left").textContent = Game1.statusMessage;
 });
 
-getPuzzle((error, puzzle) => {
-  if (error) {
-    console.log(`Error: ${error}`);
-  } else {
-    console.log(puzzle);
-  }
-});
+// getPuzzle((error, puzzle) => {
+//   if (error) {
+//     console.log(`Error: ${error}`);
+//   } else {
+//     console.log(puzzle);
+//   }
+// });
 
+const puzzle = getPuzzleSync();
+
+console.log(puzzle);
+
+console.log("Do something else");
 //Making an HTTP request
 
 // //1. Make a new request for all countries
