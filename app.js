@@ -37,7 +37,10 @@ requestCanada.addEventListener("readystatechange", e => {
     const data = JSON.parse(e.target.responseText);
     const country = data.find(country => country.alpha2Code === countryCode);
     console.log(country.name);
+  } else if (e.target.readyState === 4) {
+    console.log("unable to fetch data");
   }
 });
 
 requestCanada.open("GET", "http://restcountries.eu/rest/v2/all");
+requestCanada.send();
