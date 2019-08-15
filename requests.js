@@ -1,4 +1,4 @@
-const getPuzzle = callback => {
+const getPuzzle = (wordCount, callback) => {
   const request = new XMLHttpRequest();
   const proxy = "https://cors-anywhere.herokuapp.com/";
 
@@ -10,19 +10,6 @@ const getPuzzle = callback => {
       callback("An error has taken place", undefined);
     }
   });
-  request.open("GET", `http://puzzle.mead.io/puzzle?wordCount=3`);
+  request.open("GET", `http://puzzle.mead.io/puzzle?wordCount=${wordCount}`);
   request.send();
-};
-
-const getPuzzleSync = () => {
-  const request = new XMLHttpRequest();
-  request.open("GET", `http://puzzle.mead.io/puzzle?wordCount=3`, false);
-  request.send();
-
-  if (request.readyState === 4 && request.status === 200) {
-    const data = JSON.parse(request.responseText);
-    return data.puzzle;
-  } else if (request.readyState === 4) {
-    throw new Error("Things did not go well");
-  }
 };
