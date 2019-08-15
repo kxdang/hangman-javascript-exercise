@@ -24,18 +24,10 @@ getPuzzle("3", (error, puzzle) => {
 // //3. Find your country object by its country code (alpha2Code property)
 // //4. Print the full country name (name property)
 
-// const countryCode = "CA";
-// const requestCanada = new XMLHttpRequest();
-
-// requestCanada.addEventListener("readystatechange", e => {
-//   if (e.target.readyState === 4 && e.target.status === 200) {
-//     const data = JSON.parse(e.target.responseText);
-//     const country = data.find(country => country.alpha2Code === countryCode);
-//     console.log(country.name);
-//   } else if (e.target.readyState === 4) {
-//     console.log("unable to fetch data");
-//   }
-// });
-
-// requestCanada.open("GET", "http://restcountries.eu/rest/v2/all");
-// requestCanada.send();
+getCountry("CA", (error, country) => {
+  if (error) {
+    console.log(`Error: ${error}`);
+  } else {
+    console.log(`Country name: ${country.name}`);
+  }
+});
