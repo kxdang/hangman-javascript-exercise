@@ -9,13 +9,14 @@ window.addEventListener("keypress", e => {
   document.querySelector("#guesses-left").textContent = Game1.statusMessage;
 });
 
-getPuzzle("3", (error, puzzle) => {
-  if (error) {
-    console.log(`Error: ${error}`);
-  } else {
+getPuzzle("3").then(
+  puzzle => {
     console.log(puzzle);
+  },
+  err => {
+    console.log(`Error ${err}`);
   }
-});
+);
 
 //Making an HTTP request
 
