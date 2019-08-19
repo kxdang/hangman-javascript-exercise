@@ -25,10 +25,11 @@ getPuzzle("3").then(
 // //3. Find your country object by its country code (alpha2Code property)
 // //4. Print the full country name (name property)
 
-getCountry("CA", (error, country) => {
-  if (error) {
-    console.log(`Error: ${error}`);
-  } else {
-    console.log(`Country name: ${country.name}`);
+getCountry("CA").then(
+  country => {
+    console.log(country.name);
+  },
+  err => {
+    console.log(`Error ${err}`);
   }
-});
+);
