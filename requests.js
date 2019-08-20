@@ -25,8 +25,9 @@ const getCountry = countryCode => {
     .then(data => data.find(country => country.alpha2Code === countryCode));
 };
 
+secretToken = config.MY_INFO_KEY;
 const getLocat = () => {
-  return fetch(`http://ipinfo.io/json?token=`)
+  return fetch(`http://ipinfo.io/json?token=${secretToken}`)
     .then(response => {
       if (response.status === 200) {
         return response.json();

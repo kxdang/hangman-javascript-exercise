@@ -17,17 +17,12 @@ getPuzzle("2")
     console.log(`Error: ${err}`);
   });
 
-getCountry("CA")
-  .then(country => {
-    console.log(country.name);
-  })
-  .catch(err => {
-    console.log(`Error: ${err}`);
-  });
-
 getLocat()
   .then(data => {
-    console.log(`I live in ${data.city}, ${data.region} in ${data.country}`);
+    return getCountry(data.country);
+  })
+  .then(country => {
+    console.log(country.name);
   })
   .catch(err => {
     console.log(err);
