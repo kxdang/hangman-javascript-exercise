@@ -22,9 +22,7 @@ const getCountry = countryCode => {
         throw new Error("Unable to fetch countries");
       }
     })
-    .then(data => {
-      data.find(country => country.alpha2Code === countryCode);
-    });
+    .then(data => data.find(country => country.alpha2Code === countryCode));
 };
 
 // new Promise((resolve, reject) => {
