@@ -23,9 +23,7 @@ const getCountry = countryCode => {
       }
     })
     .then(data => {
-      return (country = data.find(
-        country => country.alpha2Code === countryCode
-      ));
+      data.find(country => country.alpha2Code === countryCode);
     });
 };
 
