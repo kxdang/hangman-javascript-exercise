@@ -24,3 +24,11 @@ getCountry("CA")
   .catch(err => {
     console.log(`Error: ${err}`);
   });
+
+getLocat()
+  .then(data => {
+    console.log(`I live in ${data.city}, ${data.region} in ${data.country}`);
+  })
+  .catch(err => {
+    console.log(err);
+  });

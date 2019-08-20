@@ -24,3 +24,17 @@ const getCountry = countryCode => {
     })
     .then(data => data.find(country => country.alpha2Code === countryCode));
 };
+
+const getLocat = () => {
+  return fetch(`http://ipinfo.io/json?token=eae9b9f6d7eb35`)
+    .then(response => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error("Unable to fetch your API data");
+      }
+    })
+    .then(data => {
+      return data;
+    });
+};
