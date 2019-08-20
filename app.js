@@ -23,14 +23,13 @@ getPuzzle("2")
 // //3. Find your country object by its country code (alpha2Code property)
 // //4. Print the full country name (name property)
 
-getCountry("CA").then(
-  country => {
+getCountry("CA")
+  .then(country => {
     console.log(country.name);
-  },
-  err => {
-    console.log(`Error ${err}`);
-  }
-);
+  })
+  .catch(err => {
+    console.log(`Error: ${err}`);
+  });
 //fetch is a promise API - checks the status of the response for you
 // fetch("http://puzzle.mead.io/puzzle", {})
 //   .then(response => {
