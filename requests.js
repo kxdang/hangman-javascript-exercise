@@ -26,7 +26,7 @@ const getCountry = countryCode => {
 };
 
 const getLocat = () => {
-  return fetch(`http://ipinfo.io/json?token=eae9b9f6d7eb35`)
+  return fetch(`http://ipinfo.io/json?token=`)
     .then(response => {
       if (response.status === 200) {
         return response.json();
