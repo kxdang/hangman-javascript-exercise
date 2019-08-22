@@ -49,6 +49,5 @@ const getLocat = async () => {
 
 const getCurrentCountry = async () => {
   const location = await getLocat();
-  const country = await getCountry(location.country);
-  return country;
+  return (country = await getCountry(location.country));
 };

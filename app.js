@@ -24,14 +24,3 @@ getCurrentCountry()
   .catch(error => {
     console.log(error);
   });
-
-getLocat()
-  .then(data => {
-    return getCountry(data.country);
-  })
-  .then(country => {
-    console.log(country.name);
-  })
-  .catch(err => {
-    console.log(`Error: ${err}`);
-  });
