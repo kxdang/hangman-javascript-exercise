@@ -5,19 +5,24 @@ let Game1;
 window.addEventListener("keypress", e => {
   const guess = String.fromCharCode(e.charCode);
   Game1.makeGuess(guess);
-  word.textContent = Game1.Puzzle;
-  guessesLeft.textContent = Game1.statusMessage;
+  render();
 });
 
 const render = () => {
-  word.textContent = Game1.Puzzle;
+  word.innerHTML = "";
   guessesLeft.textContent = Game1.statusMessage;
+
+  Game1.Puzzle.split("").forEach(letter => {
+    const letterEl = document.createElement("span");
+    letterEl.textContent = letter;
+    word.appendChild(letterEl);
+  });
 };
 
 const startGame = async () => {
   const puzzle = await getPuzzle("2");
   Game1 = new Hangman(puzzle, 5);
-  console.log(Game1);
+
   render();
 };
 
